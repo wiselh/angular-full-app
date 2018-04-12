@@ -1,7 +1,22 @@
-<p>
-  Home Pages :)
-</p>
-<ul>
-  <li *ngFor="let goal of goals">{{goal}}</li>
-</ul>
-
+<div class="container color-dark">
+  <div class="col">
+    <p>Add a bucket list item</p>
+  </div>
+  <div class="col">
+    <p>Your bucket list({{counter}})</p>
+  </div>
+</div>
+<div class="container color-light"  [@goals]="goals.length">
+  <div class="col">
+    <p class="sm">What do you want to accomplish in your life?</p>
+    <form>
+      <input type="text" class="txt" name="item" placeholder="Life goal.." [(ngModel)]="goalfield">
+      <input type="submit" class="btn" [value]="btnText" (click)="addItem()">
+    </form>
+  </div>
+  <div class="col">
+    <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+      {{goal}}
+    </p>
+  </div>
+</div>
