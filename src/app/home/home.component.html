@@ -12,9 +12,9 @@
 <div class="row color-light"  [@goals]="goals.length">
   <div class="col-6">
     <p>What do you want to accomplish in your life?</p>
-    <form class="row">
-      <input type="text" class="form-control col-6" name="item" placeholder="Life goal.." [(ngModel)]="goalfield">
-      <input type="submit" class="btn btn-primary col-4 ml-auto" [value]="btnText" (click)="addItem()">
+    <form class="row" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+      <input ngModel name="goalfield" type="text" class="form-control col-6"  placeholder="Life goal..">
+      <input type="submit" class="btn btn-primary col-4 ml-auto" [value]="btnText" >
     </form>
   </div>
   <div class="col-6">

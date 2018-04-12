@@ -1,6 +1,7 @@
 import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
   goals =[];
   counter:number;
   btnText: string='Add New Goal';
-  goalfield:string='my first goal';
+  // goalfield:string='my first goal';
 
   constructor(private _data:DataService) { }
 
@@ -50,10 +51,17 @@ export class HomeComponent implements OnInit {
     
   }
 
-  addItem(){
-    this.goals.push(this.goalfield);
-    this.goalfield='';
+  // addItem(){
+  //   this.goals.push(this.goalfield);
+  //   this.goalfield='';
+  //   this.counter = this.goals.length;
+  // }
+
+  onSubmit(myFrom: NgForm) {
+    console.log(myFrom.value.goalfield);
+    this.goals.push(myFrom.value.goalfield);
     this.counter = this.goals.length;
   }
+
 
 }
