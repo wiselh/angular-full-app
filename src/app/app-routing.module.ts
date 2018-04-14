@@ -1,3 +1,4 @@
+import { FirebaseDataComponent } from './firebase-data/firebase-data.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NgModule } from '@angular/core';
@@ -7,16 +8,20 @@ import { DataComponent } from './data/data.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: HomeComponent
   },
   {
     path: 'about',
     component: AboutComponent
   },
-   {
+  {
     path: 'data',
     component: DataComponent
+  },
+  {
+    path: 'firebase',
+    component: FirebaseDataComponent
   }
 ];
 

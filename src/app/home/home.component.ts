@@ -32,12 +32,12 @@ import { NgForm } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  goals =[];
-  counter:number;
-  btnText: string='Add New Goal';
+  goals = [];
+  counter: number;
+  btnText: string = 'Add New Goal';
   // goalfield:string='my first goal';
 
-  constructor(private _data:DataService) { }
+  constructor(private _data: DataService) { }
 
   ngOnInit() {
     this._data.goal.subscribe(res => this.goals = res);
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
   removeItem(i) {
     this.goals.splice(i, 1);
     this.counter = this.goals.length;
-    
+
   }
 
   // addItem(){

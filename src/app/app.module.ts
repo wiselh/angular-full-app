@@ -14,13 +14,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
+import { FirebaseDataComponent } from './firebase-data/firebase-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    DataComponent
+    DataComponent,
+    FirebaseDataComponent
   ],
   imports: [
     BrowserModule,
